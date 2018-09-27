@@ -5,4 +5,5 @@
     <string name="lahetanappi">Tallenna</string>
     <string name="historia">Nykyinen kuukausi</string>
     <string name="kokohistoria">Koko historia</string>
+    <string name="tanaansyoty">Tänään syöty:</string>
 </resources>

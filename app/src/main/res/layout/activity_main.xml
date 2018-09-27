@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/paivankalorit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -45,14 +46,14 @@
         android:id="@+id/naytahistoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/historia"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kaloriInput" />
+        app:layout_constraintTop_toBottomOf="@+id/tanaansyoty" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/naytaKokoHistoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,5 +62,24 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/naytahistoria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/naytahistoria" />
+
+    <TextView
+        android:id="@+id/tanaansyoty"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/tanaansyoty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kaloriInput" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="asdasd"
+        app:layout_constraintBottom_toTopOf="@+id/naytahistoria"
+        app:layout_constraintStart_toEndOf="@+id/tanaansyoty" />
 
 </android.support.constraint.ConstraintLayout>
