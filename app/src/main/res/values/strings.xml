@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SoTe-Appi</string>
+    <string name="kaloriteksti">Kalorit</string>
+    <string name="painoteksti">Paino</string>
+    <string name="lahetanappi">Tallenna</string>
+    <string name="historia">Nykyinen kuukausi</string>
+    <string name="kokohistoria">Koko historia</string>
 </resources>
