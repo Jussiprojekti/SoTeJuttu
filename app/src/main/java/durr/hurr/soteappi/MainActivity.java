@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences myPref;
     public static final String SHARED_PREF="agePref";
+    int paino;
+    int kalorit;
+    String paiva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         myPref = getSharedPreferences(SHARED_PREF, Activity.MODE_PRIVATE);
 
         setContentView(R.layout.activity_main);
-        //Day tanaan = new(Day(LocalDate));
 
         public void onRadioButtonClicked(View view) {
             // Is the button now checked?
@@ -40,11 +42,15 @@ public class MainActivity extends AppCompatActivity {
                         break;
             }
         }
-
         ZoneId aikaVyo = ZoneId.of("Europe/Helsinki");
-        Day tanaan = new Day(LocalDate.now(aikaVyo).toString());
-        TextView paivamaara = findViewById(R.id.testi);
-        paivamaara.setText(LocalDate.now(aikaVyo).toString());
+        paiva = myPref.getString("paiva", LocalDate.now(aikaVyo).toString());
+        kalorit = myPref.getInt("kalorit", 0);
+        paino = myPref.getInt("paino", 0);
+        if(!LocalDate.now(aikaVyo).toString().equals(paiva)) {
+            Day tanaan = new Day(LocalDate.now(aikaVyo).toString(), 0, paino);
+            TextView paivamaara = findViewById(R.id.testi);
+            paivamaara.setText(LocalDate.now(aikaVyo).toString());
+        }
     }
 
 }
