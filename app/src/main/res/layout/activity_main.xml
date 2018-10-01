@@ -46,7 +46,7 @@
         android:id="@+id/naytahistoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/historia"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:id="@+id/tanaansyoty"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:text="@string/tanaansyoty"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,5 +81,41 @@
         android:text="asdasd"
         app:layout_constraintBottom_toTopOf="@+id/naytahistoria"
         app:layout_constraintStart_toEndOf="@+id/tanaansyoty" />
+
+
+    <RadioGroup
+        android:id="@+id/sexGroup"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:checkedButton="@+id/radioButtonMies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naytahistoria">
+
+        <RadioButton
+            android:id="@+id/radioButtonMies"
+            android:layout_width="101dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/str_mies"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/naytahistoria" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNainen"
+            android:layout_width="99dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/str_nainen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButtonMies" />
+    </RadioGroup>
+
 
 </android.support.constraint.ConstraintLayout>

@@ -6,4 +6,6 @@
     <string name="historia">Nykyinen kuukausi</string>
     <string name="kokohistoria">Koko historia</string>
     <string name="tanaansyoty">Tänään syöty:</string>
+    <string name="str_mies">Mies</string>
+    <string name="str_nainen">Nainen</string>
 </resources>
