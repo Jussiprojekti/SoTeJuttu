@@ -46,7 +46,7 @@
         android:id="@+id/naytahistoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/historia"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,9 +77,19 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
         android:text="asdasd"
         app:layout_constraintBottom_toTopOf="@+id/naytahistoria"
         app:layout_constraintStart_toEndOf="@+id/tanaansyoty" />
+
+    <TextView
+        android:id="@+id/testi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
