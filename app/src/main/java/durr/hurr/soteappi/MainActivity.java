@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioButton;
 
+import android.widget.TextView;
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
             }
         }
+
+        ZoneId aikaVyo = ZoneId.of("Europe/Helsinki");
+        Day tanaan = new Day(LocalDate.now(aikaVyo).toString());
+        TextView paivamaara = findViewById(R.id.testi);
+        paivamaara.setText(LocalDate.now(aikaVyo).toString());
     }
 
 }
