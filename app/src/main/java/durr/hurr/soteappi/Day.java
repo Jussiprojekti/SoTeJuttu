@@ -30,6 +30,10 @@ public class Day {
         return this.kalorit;
     }
 
+    public String getPaiva() {
+        return this.paiva;
+    }
+
     @Override
     public String toString() {
         return this.paiva;

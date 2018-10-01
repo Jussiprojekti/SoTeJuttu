@@ -6,7 +6,7 @@ public class DayContainer {
     private static final DayContainer ourInstance = new DayContainer();
 
     private static final DayContainer dayContainer = new DayContainer();
-    private ArrayList<Day> listDays;
+    public ArrayList<Day> listDays;
 
     private DayContainer() {
         listDays = new ArrayList<>();
