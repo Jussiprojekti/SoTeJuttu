@@ -70,17 +70,6 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         Log.d("MY_APP","Paused");
         saveData();
-            // Check which radio button was clicked
-            switch(view.getId()) {
-                case R.id.radioButtonMies:
-                    if (checked)
-                        // Pirates are the best
-                        break;
-                case R.id.radioButtonNainen:
-                    if (checked)
-                        // Ninjas rule
-                        break;
-            }
         }
 
     }
