@@ -18,7 +18,7 @@ public class ShowMonth extends AppCompatActivity {
         lv.setAdapter(new ArrayAdapter<>(
             this,
             android.R.layout.simple_list_item_1,
-            PresidenttiContainer.getInstance().getPresidents())
+            DayContainer.getInstance().getPresidents())
         );
     }
 }
