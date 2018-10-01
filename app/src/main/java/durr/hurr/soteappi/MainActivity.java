@@ -26,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sex=myPref.getString(KEY_SEX, "male");
-
         myPref = getSharedPreferences(SHARED_PREF, Activity.MODE_PRIVATE);
+        sex=myPref.getString(KEY_SEX, "male");
 
         ZoneId aikaVyo = ZoneId.of("Europe/Helsinki");
         paiva = myPref.getString("paiva", LocalDate.now(aikaVyo).toString());
