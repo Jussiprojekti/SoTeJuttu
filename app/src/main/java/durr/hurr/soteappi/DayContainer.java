@@ -6,12 +6,11 @@ public class DayContainer {
     private static final DayContainer ourInstance = new DayContainer();
 
     private static final DayContainer dayContainer = new DayContainer();
-    private ArrayList<Day> listDays;
+    public ArrayList<Day> listDays;
 
     private DayContainer() {
         listDays = new ArrayList<>();
         //DayContainer.getInstance().listDays.add(new Day());
-
     }
 
     //Find daycontainer method
@@ -19,7 +18,7 @@ public class DayContainer {
         return dayContainer;
     }
 
-    public ArrayList<Day> getPresidents() {
+    public ArrayList<Day> getDays() {
         return listDays;
     }
 

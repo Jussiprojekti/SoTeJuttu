@@ -14,11 +14,11 @@ public class ShowMonth extends AppCompatActivity {
 
         ListView lv = findViewById(R.id.listViewMonth);
 
-        //Muuntaa näkymän niin että osaa käsitellä Arraylistaa
+        //Set arraylist
         lv.setAdapter(new ArrayAdapter<>(
             this,
             android.R.layout.simple_list_item_1,
-            DayContainer.getInstance().getPresidents())
+            DayContainer.getInstance().getDays())
         );
     }
 }

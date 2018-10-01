@@ -1,6 +1,7 @@
 package durr.hurr.soteappi;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,12 +34,19 @@ public class MainActivity extends AppCompatActivity {
         paiva = myPref.getString("paiva", LocalDate.now(aikaVyo).toString());
         kalorit = myPref.getInt("kalorit", 0);
         paino = myPref.getInt("paino", 0);
+
         if(!LocalDate.now(aikaVyo).toString().equals(paiva)) {
             Day tanaan = new Day(LocalDate.now(aikaVyo).toString(), 0, paino);
             TextView paivamaara = findViewById(R.id.testi);
             paivamaara.setText(LocalDate.now(aikaVyo).toString());
         }
 
+    }
+    public void onShowMonthButton(View view) {
+        Log.d("MY_APP", "onItemClick(ShowMonthsButton)");
+        //Go to ShowMonth activity
+        Intent nextActivity = new Intent(MainActivity.this, ShowMonth.class);
+        startActivity(nextActivity);
     }
 
     public void onRadioButtonClicked(View view) {
