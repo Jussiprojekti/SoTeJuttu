@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         System.out.println("Benis");
-        Day tanaan = new(Day());
+        ZoneId aikaVyo = ZoneId.of("Europe/Helsinki");
+        Day tanaan = new(Day(LocalDate.now(aikaVyo)));
     }
 
 }
