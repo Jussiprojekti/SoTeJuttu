@@ -1,6 +1,7 @@
 package durr.hurr.soteappi;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         sex=myPref.getString(KEY_SEX, "male");
         paivaTarkistus();
 
+    }
+    public void onShowMonthButton(View view) {
+        Log.d("MY_APP", "onItemClick(ShowMonthsButton)");
+        //Go to ShowMonth activity
+        Intent nextActivity = new Intent(MainActivity.this, ShowMonth.class);
+        //nextActivity.putExtra("ListOfDays", DayContainer.getInstance().getDaysList());
+        startActivity(nextActivity);
     }
 
     public void lisaaKaloreita(View view) {

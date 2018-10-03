@@ -10,8 +10,10 @@ public class DayContainer {
 
     private DayContainer() {
         listDays = new ArrayList<>();
-        //DayContainer.getInstance().listDays.add(new Day());
-
+        listDays.add(new Day("jee", 32, 43));
+        listDays.add(new Day("juu", 47, 98));
+        //DayContainer.getInstance().listDays.add(new Day("jee", 32, 43));
+        //DayContainer.getInstance().listDays.add(new Day("juu", 47, 98));
     }
 
     //Find daycontainer method
@@ -19,7 +21,7 @@ public class DayContainer {
         return dayContainer;
     }
 
-    public ArrayList<Day> getPresidents() {
+    public ArrayList<Day> getDaysList() {
         return listDays;
     }
 
