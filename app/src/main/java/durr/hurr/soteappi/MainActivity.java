@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.view.View;
 import android.widget.TextView;
@@ -41,6 +43,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(nextActivity);
     }
 
+    public void lisaaKaloreita(View view) {
+        setContentView(R.layout.activity_main);
+        EditText kaloriKentta = findViewById(R.id.kaloriInput);
+        EditText painoKentta = findViewById(R.id.painoInput);
+        TextView paivamaara = findViewById(R.id.testi);
+        int lisaKalori = Integer.valueOf(kaloriKentta.getText().toString());
+        paivamaara.setText(String.valueOf(lisaKalori));
+        //if(TextUtils.isEmpty(kaloriKentta.getText().toString())) {
+            //int uudetKalorit = Integer.parseInt(kaloriKentta.getText().toString());
+            //kalorit = kalorit + uudetKalorit;
+            //Log.d(log, "lisatty kaloreita");
+        //}
+        //if(!TextUtils.isEmpty(painoKentta.getText().toString())) {
+        //    paino = Integer.parseInt(painoKentta.getText().toString());
+        //}
+        paivitys();
+        Log.d(log, "lisaa kaloreita");
+    }
+
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -70,12 +91,18 @@ public class MainActivity extends AppCompatActivity {
             TextView paivamaara = findViewById(R.id.testi);
             paivamaara.setText(LocalDate.now(aikaVyo).toString());
             DayContainer.getInstance().listDays.add(new Day(paiva, kalorit, paino));
+            paiva = LocalDate.now(aikaVyo).toString();
         } else {
             Day tanaan = new Day(paiva, kalorit, paino);
         }
-        TextView kaloriNaytto = findViewById(R.id.kaloriView);
-        kaloriNaytto.setText(Integer.toString(kalorit));
+        paivitys();
         Log.d(log, "paivatarkistus");
+    }
+
+    public void paivitys() {
+        setContentView(R.layout.activity_main);
+        TextView kaloriKentta = findViewById(R.id.kaloriView);
+        kaloriKentta.setText(Integer.toString(kalorit));
     }
 
     public void saveData() {
