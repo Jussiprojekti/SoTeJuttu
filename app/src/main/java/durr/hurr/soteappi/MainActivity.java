@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         paivaTarkistus();
 
     }
-    public void onShowMonthButton(View view) {
+     public void onShowMonthButton(View view) {
         Log.d("MY_APP", "onItemClick(ShowMonthsButton)");
         //Go to ShowMonth activity
         Intent nextActivity = new Intent(MainActivity.this, ShowMonth.class);
