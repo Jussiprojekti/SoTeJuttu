@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     String paiva;
     public String sex;
     public static final String KEY_SEX="sexKey";
+    public static final String log = "SoTeAppi";
 
 
     @Override
@@ -29,17 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         myPref = getSharedPreferences(SHARED_PREF, Activity.MODE_PRIVATE);
         sex=myPref.getString(KEY_SEX, "male");
-
-        ZoneId aikaVyo = ZoneId.of("Europe/Helsinki");
-        paiva = myPref.getString("paiva", LocalDate.now(aikaVyo).toString());
-        kalorit = myPref.getInt("kalorit", 0);
-        paino = myPref.getInt("paino", 0);
-
-        if(!LocalDate.now(aikaVyo).toString().equals(paiva)) {
-            Day tanaan = new Day(LocalDate.now(aikaVyo).toString(), 0, paino);
-            TextView paivamaara = findViewById(R.id.testi);
-            paivamaara.setText(LocalDate.now(aikaVyo).toString());
-        }
+        paivaTarkistus();
 
     }
     public void onShowMonthButton(View view) {
@@ -67,16 +58,46 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void paivaTarkistus() {
+        setContentView(R.layout.activity_main);
+        myPref = getSharedPreferences(SHARED_PREF, Activity.MODE_PRIVATE);
+        ZoneId aikaVyo = ZoneId.of("Europe/Helsinki");
+        paiva = myPref.getString("paiva", LocalDate.now(aikaVyo).toString());
+        kalorit = myPref.getInt("kalorit", 0);
+        paino = myPref.getInt("paino", 0);
+        if(!LocalDate.now(aikaVyo).toString().equals(paiva)) {
+            Day tanaan = new Day(LocalDate.now(aikaVyo).toString(), 0, paino);
+            TextView paivamaara = findViewById(R.id.testi);
+            paivamaara.setText(LocalDate.now(aikaVyo).toString());
+            DayContainer.getInstance().listDays.add(new Day(paiva, kalorit, paino));
+        } else {
+            Day tanaan = new Day(paiva, kalorit, paino);
+        }
+        TextView kaloriNaytto = findViewById(R.id.kaloriView);
+        kaloriNaytto.setText(Integer.toString(kalorit));
+        Log.d(log, "paivatarkistus");
+    }
+
     public void saveData() {
         SharedPreferences.Editor editor = myPref.edit();
         editor.putString(KEY_SEX, this.sex);
+        editor.putString("paiva", paiva);
+        editor.putInt("kalorit", kalorit);
+        editor.putInt("paino", paino);
         editor.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        paivaTarkistus();
+
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        Log.d("MY_APP","Paused");
+        Log.d(log,"Paused");
         saveData();
     }
 
