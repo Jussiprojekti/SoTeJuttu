@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MY_APP", "onItemClick(ShowMonthsButton)");
         //Go to ShowMonth activity
         Intent nextActivity = new Intent(MainActivity.this, ShowMonth.class);
+        //nextActivity.putExtra("ListOfDays", DayContainer.getInstance().getDaysList());
         startActivity(nextActivity);
     }
 

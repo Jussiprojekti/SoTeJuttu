@@ -12,13 +12,17 @@ public class ShowMonth extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_month);
 
+        //Find ListView element
         ListView lv = findViewById(R.id.listViewMonth);
 
-        //Set arraylist
-        lv.setAdapter(new ArrayAdapter<>(
-            this,
-            android.R.layout.simple_list_item_1,
-            DayContainer.getInstance().getDays())
+        //Create adapter that handle arraylist to ListView
+        ArrayAdapter<Day> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                DayContainer.getInstance().getDaysList()
         );
+
+        //Set adapter to right element
+        lv.setAdapter(adapter);
     }
 }
