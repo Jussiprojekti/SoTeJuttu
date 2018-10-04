@@ -46,28 +46,28 @@ public class MainActivity extends AppCompatActivity {
     public void lisaaKaloreita(View view) {
         //setContentView(R.layout.activity_main); <--Tämä paskanaama on syy pahaanoloon
         EditText kaloriKentta = (EditText)  findViewById(R.id.kaloriInput);
-        //EditText painoKentta = findViewById(R.id.painoInput);
-        //TextView paivamaara = findViewById(R.id.testi);
+        EditText painoKentta = findViewById(R.id.painoInput);
+        TextView paivamaara = findViewById(R.id.testi);
 
-        int teksti = 34;
-        String teksti2 = kaloriKentta.getText().toString();
+        //int teksti = 34;
+        //String uudetKalorit = kaloriKentta.getText().toString();
 
-        TextView textView = findViewById(R.id.testi);
-        textView.setText(String.valueOf(teksti2));
+        //TextView textView = findViewById(R.id.testi);
+        //textView.setText(String.valueOf(uudetKalorit));
         //textView.setText(teksti);
 
-        //int lisaKalori = Integer.valueOf(kaloriKentta.getText().toString());
-        //paivamaara.setText(String.valueOf(lisaKalori));
-        //if(TextUtils.isEmpty(kaloriKentta.getText().toString())) {
-            //int uudetKalorit = Integer.parseInt(kaloriKentta.getText().toString());
-            //kalorit = kalorit + uudetKalorit;
-            //Log.d(log, "lisatty kaloreita");
-        //}
-        //if(!TextUtils.isEmpty(painoKentta.getText().toString())) {
-        //    paino = Integer.parseInt(painoKentta.getText().toString());
-        //}
-        //paivitys();
-        //Log.d(log, "lisaa kaloreita");
+        int lisaKalori = Integer.valueOf(kaloriKentta.getText().toString());
+        paivamaara.setText(String.valueOf(lisaKalori));
+        if(!TextUtils.isEmpty(kaloriKentta.getText().toString())) {
+            int uudetKalorit = Integer.parseInt(kaloriKentta.getText().toString());
+            kalorit = kalorit + uudetKalorit;
+            Log.d(log, "lisatty kaloreita");
+        }
+        if(!TextUtils.isEmpty(painoKentta.getText().toString())) {
+            paino = Integer.parseInt(painoKentta.getText().toString());
+        }
+        paivitys();
+        Log.d(log, "lisaa kaloreita");
     }
 
     public void onRadioButtonClicked(View view) {
