@@ -30,7 +30,7 @@
         android:text="@string/text_currenMonth"
         android:textAlignment="center"
         android:textColor="#186A3B"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listViewMonth"
         app:layout_constraintEnd_toEndOf="parent"

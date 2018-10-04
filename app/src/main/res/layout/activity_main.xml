@@ -18,7 +18,8 @@
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/painoInput"
         app:layout_constraintEnd_toStartOf="@+id/painoInput"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="Kcal" />
 
     <EditText
         android:id="@+id/painoInput"
@@ -29,7 +30,8 @@
         android:hint="@string/painoteksti"
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/laheta"
-        app:layout_constraintEnd_toStartOf="@+id/laheta" />
+        app:layout_constraintEnd_toStartOf="@+id/laheta"
+        android:autofillHints="Kg" />
 
     <Button
         android:id="@+id/laheta"
@@ -49,7 +51,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:onClick="onShowMonthButton"
         android:text="@string/historia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tanaansyoty" />
@@ -121,10 +122,11 @@
 
     <TextView
         android:id="@+id/testi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="159dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:text="@string/text_testi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
