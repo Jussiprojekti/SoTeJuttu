@@ -26,9 +26,18 @@ public class DayContainer {
         return listDays;
     }
 
-    public Day getDay(int i) {
-        return listDays.get(i);
+    public Day getDay(String day) {
+        for(int k = 0; this.listDays.size()>k; k++) {
+            Day vertaus = this.listDays.get(k);
+                if(day.equals(vertaus.getPaiva())) {
+                    return vertaus;
+                }
+            }
+        return null;
     }
+}
+
+
 
     public int getAvarange() {
         for (Day currentday : listDays) {
@@ -37,4 +46,3 @@ public class DayContainer {
     }
 
 
-}
