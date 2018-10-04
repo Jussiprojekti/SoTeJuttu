@@ -45,28 +45,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void lisaaKaloreita(View view) {
         //setContentView(R.layout.activity_main); <--Tämä paskanaama on syy pahaanoloon
-        EditText kaloriKentta = (EditText)  findViewById(R.id.kaloriInput);
+        EditText kaloriKentta = findViewById(R.id.kaloriInput);
         //EditText painoKentta = findViewById(R.id.painoInput);
         //TextView paivamaara = findViewById(R.id.testi);
-
-        int teksti = 34;
         String teksti2 = kaloriKentta.getText().toString();
 
-        TextView textView = findViewById(R.id.testi);
-        textView.setText(String.valueOf(teksti2));
+        //TextView textView = findViewById(R.id.testi);
+        //textView.setText(String.valueOf(teksti2));
         //textView.setText(teksti);
-
-        //int lisaKalori = Integer.valueOf(kaloriKentta.getText().toString());
+        int lisaKalori = Integer.valueOf(teksti2);
         //paivamaara.setText(String.valueOf(lisaKalori));
-        //if(TextUtils.isEmpty(kaloriKentta.getText().toString())) {
-            //int uudetKalorit = Integer.parseInt(kaloriKentta.getText().toString());
-            //kalorit = kalorit + uudetKalorit;
-            //Log.d(log, "lisatty kaloreita");
-        //}
+        if(!TextUtils.isEmpty(teksti2)) {
+            kalorit = kalorit + lisaKalori;
+            Log.d(log, "lisatty kaloreita");
+        }
         //if(!TextUtils.isEmpty(painoKentta.getText().toString())) {
         //    paino = Integer.parseInt(painoKentta.getText().toString());
         //}
-        //paivitys();
+        paivitys();
         //Log.d(log, "lisaa kaloreita");
     }
 
