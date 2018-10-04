@@ -34,15 +34,19 @@ public class DayContainer {
                 }
             }
         return null;
+
     }
+    public int getAvarange() {
+        int kcal=0;
+        for (Day currentday : listDays) {
+            kcal = currentday.getKalorit();
+        }
+        return kcal;
+    }
+
 }
 
 
 
-    public int getAvarange() {
-        for (Day currentday : listDays) {
-            currentday.getKalorit();
-        }
-    }
 
 
