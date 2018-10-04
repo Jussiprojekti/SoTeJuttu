@@ -36,7 +36,7 @@ public class DayContainer {
         return null;
 
     }
-    public int getAvarange() {
+    public int getAvarangeKcal() {
         int kcal=0;
         for (Day currentday : listDays) {
             kcal = currentday.getKalorit();
