@@ -36,12 +36,12 @@ public class DayContainer {
         return null;
 
     }
-    public int getAvarangeKcal() {
-        int kcal=0;
+    public double getAvarangeKcal() {
+        double kcal=0;
         for (Day currentday : listDays) {
-            kcal = currentday.getKalorit();
+            kcal += currentday.getKalorit();
         }
-        return kcal;
+        return kcal/listDays.size();
     }
 
 }
