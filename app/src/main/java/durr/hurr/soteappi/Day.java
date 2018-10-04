@@ -14,11 +14,11 @@ public class Day {
         this. kalorit = kalorit;
     }
 
-    public void lisaaPainoa(int lisaa) {
+    public void setPainoa(int lisaa) {
         this.paino = lisaa;
     }
 
-    public void lisaaKaloreita(int lisaa) {
+    public void setKaloreita(int lisaa) {
         this.kalorit = this.kalorit + lisaa;
     }
 
