@@ -18,13 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShowMonth">
-        android:parentActivityName=".MainActivity">  <!-- Where to go when return -->
+        <activity android:name=".ShowMonth" android:parentActivityName=".MainActivity">
+
+            <!-- Where to go when return -->
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".ShowStats" android:parentActivityName=".MainActivity">
+        <!-- Where to go when return -->
         <!-- The meta-data tag is required if you support API level 15 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
-    </activity>
+        </activity>
     </application>
 
 </manifest>

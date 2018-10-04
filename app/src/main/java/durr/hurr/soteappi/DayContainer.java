@@ -10,8 +10,9 @@ public class DayContainer {
 
     private DayContainer() {
         listDays = new ArrayList<>();
-        listDays.add(new Day("jee", 32, 43));
-        listDays.add(new Day("juu", 47, 98));
+        listDays.add(new Day("27-04-2018", 1720, 75));
+        listDays.add(new Day("28-04-2018", 1635, 74));
+        listDays.add(new Day("29-04-2018", 2030, 74));
         //DayContainer.getInstance().listDays.add(new Day("jee", 32, 43));
         //DayContainer.getInstance().listDays.add(new Day("juu", 47, 98));
     }
@@ -29,6 +30,11 @@ public class DayContainer {
         return listDays.get(i);
     }
 
+    public int getAvarange() {
+        for (Day currentday : listDays) {
+            currentday.getKalorit();
+        }
+    }
 
 
 }

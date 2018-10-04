@@ -11,7 +11,7 @@ public class Day {
     public Day(String paiva, int kalorit, int paino) {
         this.paiva = paiva;
         this.paino = paino;
-        this. kalorit = kalorit;
+        this.kalorit = kalorit;
     }
 
     public void lisaaPainoa(int lisaa) {
@@ -36,7 +36,7 @@ public class Day {
 
     @Override
     public String toString() {
-        return "" + this.paiva;
+        return this.paiva + " - " + this.kalorit + "kcal   " + this.paino + "kg";
     }
 
 }
