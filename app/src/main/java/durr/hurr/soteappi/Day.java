@@ -1,9 +1,11 @@
 package durr.hurr.soteappi;
 
+import java.io.Serializable;
+
 /**
  * @author Konsta
  */
-public class Day {
+public class Day implements Serializable {
     private int paino;
     private int kalorit;
     private String paiva;
