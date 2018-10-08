@@ -59,12 +59,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tanaansyoty" />
 
     <Button
-        android:id="@+id/naytaKokoHistoria"
+        android:id="@+id/naytaPalaute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/kokohistoria"
+        android:text="@string/palaute"
+        android:onClick="onShowStatsButton"
         app:layout_constraintBaseline_toBaselineOf="@+id/naytahistoria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/naytahistoria" />

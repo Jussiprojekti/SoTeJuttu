@@ -11,9 +11,14 @@ public class ShowStats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_stats);
 
+        TextView keskiSyonti = findViewById(R.id.textAvarangeKcal);
+        keskiSyonti.setText(DayContainer.getInstance().getAvarangeKcal());
 
-        TextView paivamaara = findViewById(R.id.textAvarangeKcal);
-        paivamaara.setText(Double.toString(DayContainer.getInstance().getAvarangeKcal()));
+        TextView painonMuutos = findViewById(R.id.textPainonMuutos);
+        painonMuutos.setText(DayContainer.getInstance().getPainonMuutos());
+
+        TextView keskikulutus = findViewById(R.id.textKeskikulutus);
+        keskikulutus.setText(DayContainer.getInstance().getKeskiKulutus());
 
     }
 }

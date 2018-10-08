@@ -26,9 +26,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences myPref;
-    public static final String SHARED_PREF="agePref";
+    public static final String SHARED_PREF="myPref";
     int paino;
-    public String sex;
+    public static String sex;
     public Day tanaan;
     ArrayList<Day> listaHolder;
     FileOutputStream ulosVirta;
@@ -52,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MY_APP", "onItemClick(ShowMonthsButton)");
         //Go to ShowMonth activity
         Intent nextActivity = new Intent(MainActivity.this, ShowMonth.class);
+         //nextActivity.putExtra("ListOfDays", DayContainer.getInstance().getDaysList());
+         startActivity(nextActivity);
+    }
+
+    public void onShowStatsButton(View view) {
+        //Go to ShowStats activity
+        Intent nextActivity = new Intent(MainActivity.this, ShowStats.class);
         //nextActivity.putExtra("ListOfDays", DayContainer.getInstance().getDaysList());
         startActivity(nextActivity);
     }
@@ -157,6 +164,10 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         Log.d(log,"Paused");
         saveData();
+    }
+
+    public String getSex(){
+        return this.sex;
     }
 
 }

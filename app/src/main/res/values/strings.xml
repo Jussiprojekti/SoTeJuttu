@@ -3,12 +3,13 @@
     <string name="kaloriteksti">Kalorit</string>
     <string name="painoteksti">Paino</string>
     <string name="lahetanappi">Tallenna</string>
-    <string name="historia">Nykyinen kuukausi</string>
-    <string name="kokohistoria">Koko historia</string>
+    <string name="historia">Näytä historia</string>
+    <string name="palaute">Näytä palaute</string>
     <string name="tanaansyoty">Tänään syöty:</string>
     <string name="str_mies">Mies</string>
     <string name="str_nainen">Nainen</string>
     <string name="text_currenMonth">Current Month</string>
     <string name="text_testi">testi</string>
     <string name="text_yourStats">Your Stats</string>
+    <string name="text_painonMuutos">Painon Muutos</string>
 </resources>
