@@ -143,5 +143,19 @@
         app:layout_constraintStart_toEndOf="@+id/painoInput"
         app:layout_constraintTop_toTopOf="@+id/painoInput" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="Elefantti"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naytahistoria"
+        app:srcCompat="@drawable/fatass" />
+
 
 </android.support.constraint.ConstraintLayout>
