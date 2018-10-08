@@ -96,6 +96,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="26dp"
         android:checkedButton="@+id/radioButtonMies"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/naytahistoria">
 
@@ -107,7 +108,7 @@
             android:layout_marginTop="16dp"
             android:clickable="false"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/str_mies"
+            android:text="@string/strMies"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/naytahistoria" />
 
@@ -118,7 +119,7 @@
             android:layout_marginStart="16dp"
             android:clickable="false"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/str_nainen"
+            android:text="@string/strNainen"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioButtonMies" />
     </RadioGroup>

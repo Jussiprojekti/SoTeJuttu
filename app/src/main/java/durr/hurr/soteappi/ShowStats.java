@@ -17,7 +17,7 @@ public class ShowStats extends AppCompatActivity {
         TextView painonMuutos = findViewById(R.id.textPainonMuutos);
         painonMuutos.setText(DayContainer.getInstance().getPainonMuutos());
 
-        TextView keskikulutus = findViewById(R.id.textKeskikulutus);
+        TextView keskikulutus = findViewById(R.id.textKulutus);
         keskikulutus.setText(DayContainer.getInstance().getKeskiKulutus());
 
     }

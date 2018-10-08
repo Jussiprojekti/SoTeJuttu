@@ -6,10 +6,10 @@
     <string name="historia">Näytä historia</string>
     <string name="palaute">Näytä palaute</string>
     <string name="tanaansyoty">Tänään syöty:</string>
-    <string name="str_mies">Mies</string>
-    <string name="str_nainen">Nainen</string>
-    <string name="text_currenMonth">Current Month</string>
-    <string name="text_testi">testi</string>
-    <string name="text_yourStats">Your Stats</string>
-    <string name="text_painonMuutos">Painon Muutos</string>
+    <string name="strMies">Mies</string>
+    <string name="strNainen">Nainen</string>
+    <string name="textCurrenMonth">Current Month</string>
+    <string name="textTesti">testi</string>
+    <string name="textYourStats">Your Stats</string>
+    <string name="textPainonMuutos">Painon Muutos</string>
 </resources>
