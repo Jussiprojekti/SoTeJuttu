@@ -210,15 +210,16 @@ public class MainActivity extends AppCompatActivity {
     public void updateSexButtons() {
         sex=myPref.getString(KEY_SEX, "female");
 
-        RadioGroup sexButton = (RadioGroup) findViewById(R.id.sexGroup);
-        sexButton.check(R.id.radioButtonNainen);
-
-        if (sex.equals("male")) {
+        RadioGroup sexButton = findViewById(R.id.sexGroup);
+        sexButton.clearCheck();
+        RadioButton suk = findViewById(R.id.radioButtonNainen);
+        suk.setChecked(true);
+        /*if (sex.equals("male")) {
             sexButton.check(R.id.radioButtonMies);
             //sexButton.check(R.id.radioButtonNainen);
         } else {
             sexButton.check(R.id.radioButtonNainen);
-        }
+        }*/
     }
 
 
