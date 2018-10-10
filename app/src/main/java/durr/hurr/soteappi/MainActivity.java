@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         String teksti2 = painoKentta.getText().toString();
 
         if(!TextUtils.isEmpty(teksti2)) {
-            int lisapaino = Integer.valueOf(teksti2);
+            int lisapaino = Integer.valueOf(teksti2); 
             tanaan.setPainoa(lisapaino);
             Log.d(log, "lisatty paino");
             paivitys();
