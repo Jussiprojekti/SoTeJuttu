@@ -75,6 +75,7 @@ public class DayContainer {
         listDays.add(new Day("2018-10-06", 1400, 73));
         listDays.add(new Day("2018-10-06", 1100, 73));
 */
+
         }
         //DayContainer.getInstance().listDays.add(new Day("jee", 32, 43));
         //DayContainer.getInstance().listDays.add(new Day("juu", 47, 98));
