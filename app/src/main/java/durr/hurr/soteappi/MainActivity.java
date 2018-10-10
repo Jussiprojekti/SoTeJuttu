@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.io.BufferedOutputStream;
@@ -159,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
             DayContainer.getInstance().getDaysList().add(tanaan);
             Log.d(log, "uusi paiva");
         }
+        updateSexButtons(); //Update radiobuttons
         TextView paivamaara = findViewById(R.id.testi);
         paivamaara.setText(LocalDate.now(aikaVyo).toString());
         paivitys();
@@ -201,6 +203,24 @@ public class MainActivity extends AppCompatActivity {
         }
         editor.commit();
     }
+
+    /**
+     * Päivitetään radiobuttoneiden asento oikeaksi
+     */
+    public void updateSexButtons() {
+        sex=myPref.getString(KEY_SEX, "female");
+
+        RadioGroup sexButton = (RadioGroup) findViewById(R.id.sexGroup);
+        sexButton.check(R.id.radioButtonNainen);
+
+        if (sex.equals("male")) {
+            sexButton.check(R.id.radioButtonMies);
+            //sexButton.check(R.id.radioButtonNainen);
+        } else {
+            sexButton.check(R.id.radioButtonNainen);
+        }
+    }
+
 
     /**
      * Overridattu, päivätarkistus ja päivitys kutsu lisätty

@@ -8,8 +8,8 @@
     <string name="tanaansyoty">Tänään syöty:</string>
     <string name="strMies">Mies</string>
     <string name="strNainen">Nainen</string>
-    <string name="textCurrenMonth">Current Month</string>
+    <string name="textCurrenMonth">Historia</string>
     <string name="textTesti">testi</string>
-    <string name="textYourStats">Your Stats</string>
-    <string name="textPainonMuutos">Painon Muutos</string>
+    <string name="textYourStats">Tilastot</string>
+    <string name="textPainonMuutos">Painon muutos</string>
 </resources>
