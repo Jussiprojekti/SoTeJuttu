@@ -20,11 +20,13 @@ public class DayContainer {
     public ArrayList<Day> listDays;
     private ArrayList listHolder;
 
+
     /**
      * Kontruktori metodi Singletonin luomista varten, sisältää tietojen haun ja väliaikaisen
      * testipäivien lisäämisen
      */
     private DayContainer() {
+        boolean err = false;
         //Yrittää lukea tiedoston levyltä ja pistää sen väliaikaiseen ArrayList<Day>:hin
         try {
             FileInputStream fis = new FileInputStream(osoite);
@@ -36,18 +38,18 @@ public class DayContainer {
         } catch(IOException ioe){
             ioe.printStackTrace();
             Log.d(log, "rikki");
-            return;
+            err = true;
         } catch(ClassNotFoundException c){
             c.printStackTrace();
             Log.d(log, "rikki 2");
-            return;
+            err = true;
         }
         //Yrittää asettaa juuri tiedostosta haetun arraylistin päivälistaksi, jos ei, luo uuden
         //ja dummy päivät
-        try {
+        if(!err) {
             listDays = listHolder;
             Log.d(log, "Lista asetettu");
-        } catch(NullPointerException nub) {
+        } else {
             listDays = new ArrayList<>();
             listDays.add(new Day("2018-09-28", 2700, 73));
             listDays.add(new Day("2018-09-28", 2600, 73));
