@@ -34,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences myPref;
     public static final String SHARED_PREF="myPref";
     int paino;
-    public static String sex;
+    public String sex;
     public Day tanaan;
     ArrayList<Day> listaHolder;
-    FileOutputStream ulosVirta;
     public static final String KEY_SEX="sexKey";
     public static final String log = "SoTeAppi";
     File sailio;
@@ -180,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void saveData() {
         SharedPreferences.Editor editor = myPref.edit();
-        editor.putString(KEY_SEX, this.sex);
+        editor.putString(KEY_SEX, sex);
         editor.putInt("paino", tanaan.getPaino());
         sailio = new File(getFilesDir().getPath() + "lista.ser");
         try{
@@ -228,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
      * @return String jossa on tallennettu sukupuoli
      */
     public String getSex(){
-        return this.sex;
+        return sex;
     }
 
 }
