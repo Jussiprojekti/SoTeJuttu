@@ -5,8 +5,16 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class ShowMonth extends AppCompatActivity {
+/**
+ * Kaikkien tallennettujen Day olioiden näyttämiseen käytetty aktiviteetti
+ * @author Tommi
+ */
 
+public class ShowMonth extends AppCompatActivity {
+    /**
+     * Asettaa listviewen ja populoi sen ArrayAdapterilla
+     * @param savedInstanceState oletus
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

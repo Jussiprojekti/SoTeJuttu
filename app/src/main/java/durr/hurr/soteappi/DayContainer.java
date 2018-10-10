@@ -10,6 +10,8 @@ import static durr.hurr.soteappi.MainActivity.log;
 import static durr.hurr.soteappi.MainActivity.osoite;
 
 /**
+ * Singleton luokka johon tallenetaan Day olioita ja joka sisältää metodit kalorien keskikulutuksen
+ * ja painon muutosten laskemiseen
  * @author Tommi
  */
 public class DayContainer {
@@ -18,7 +20,12 @@ public class DayContainer {
     public ArrayList<Day> listDays;
     private ArrayList listHolder;
 
+    /**
+     * Kontruktori metodi Singletonin luomista varten, sisältää tietojen haun ja väliaikaisen
+     * testipäivien lisäämisen
+     */
     private DayContainer() {
+        //Yrittää lukea tiedoston levyltä ja pistää sen väliaikaiseen ArrayList<Day>:hin
         try {
             FileInputStream fis = new FileInputStream(osoite);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -35,6 +42,8 @@ public class DayContainer {
             Log.d(log, "rikki 2");
             return;
         }
+        //Yrittää asettaa juuri tiedostosta haetun arraylistin päivälistaksi, jos ei, luo uuden
+        //ja dummy päivät
         try {
             listDays = listHolder;
             Log.d(log, "Lista asetettu");
@@ -74,14 +83,28 @@ public class DayContainer {
     }
 
     //Find daycontainer method
+
+    /**
+     * Metodi on singletonin kutsumismetodi
+     * @return palauttaa viittauksen tähän singletoniin
+     */
     static DayContainer getInstance() {
         return dayContainer;
     }
 
+    /**
+     * Metodi luokan ArrayListin saamiseksi
+     * @return Palauttaa ArrayListin luokan sisältä
+     */
     public ArrayList<Day> getDaysList() {
         return listDays;
     }
 
+    /**
+     * Metodi listasta tietyn päivän etsimiseksi ja palauttamiseksi
+     * @param day String joka sisältää päivämäärätiedon jota verrataan arraylistiin
+     * @return palauttaa joko Day olion jos haettu päivämäärä löytyi jos ei, palauttaa null
+     */
     public Day getDay(String day) {
         for(int k = 0; this.listDays.size()>k; k++) {
             Day vertaus = this.listDays.get(k);
@@ -92,6 +115,12 @@ public class DayContainer {
         return null;
 
     }
+
+    /**
+     * Metodi laskee kaikki kalorit listasta ja jakaa niiden määrän päiväolioiden määrällä saadakseen
+     * keskikalorit/päivä
+     * @return String joka sisältää keskimääräiset kalorit per päivä
+     */
     public String getAvarangeKcal() {
         double kcal=0;
         for (Day currentday : listDays) {
@@ -99,7 +128,10 @@ public class DayContainer {
         }
         return "Olet syönyt keksimäärin: " + Double.toString(Math.round(kcal/listDays.size()*100)/100) + " kcal/pv";
     }
-
+    /**
+     * Metodi painonmuutoksen laskemiseen, vertaa ensimmäistä apin muistissa olevaa painoa nykyiseen
+     * @return String joka sisältää paininmuutoksen ja päivien määrän joina appia on käytetty
+     */
     public String getPainonMuutos() {
         int paino=listDays.get(0).getPaino();
         int painoNyt=listDays.get(listDays.size()-1).getPaino();
@@ -115,7 +147,11 @@ public class DayContainer {
 
         return "Olet Lihonnut " + (painoNyt-paino) + "kg " + paivat +" päivässä";
     }
-
+    /**
+     * Metodi kalorien keskikulutuksen laskemiseksi painonmuutoksen ja syötyjen kalorien mukaan
+     * vakio 9000kcal per kilo vakion mukaan
+     * @return String joka sisältää arvioidun keskikulutuksen
+     */
     public String getKeskiKulutus() {
         double kcal=0;
         for (Day currentday : listDays) {
