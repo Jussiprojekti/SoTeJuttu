@@ -92,12 +92,13 @@ public class MainActivity extends AppCompatActivity {
     public void lisaaKaloreita(View view) {
         EditText kaloriKentta = findViewById(R.id.kaloriInput);
         String teksti2 = kaloriKentta.getText().toString();
-        int lisaKalori = Integer.valueOf(teksti2);
+
         if(!TextUtils.isEmpty(teksti2)) {
+            int lisaKalori = Integer.valueOf(teksti2);
             tanaan.setKaloreita(lisaKalori);
             Log.d(log, "lisatty kaloreita");
+            paivitys();
         }
-        paivitys();
     }
 
     /**
@@ -108,12 +109,15 @@ public class MainActivity extends AppCompatActivity {
     public void lisaaPaino(View view) {
         EditText painoKentta = findViewById(R.id.painoInput);
         String teksti2 = painoKentta.getText().toString();
-        int lisapaino = Integer.valueOf(teksti2);
+
         if(!TextUtils.isEmpty(teksti2)) {
+            int lisapaino = Integer.valueOf(teksti2);
             tanaan.setPainoa(lisapaino);
             Log.d(log, "lisatty paino");
+            paivitys();
         }
-        paivitys();
+
+
     }
 
     /**
@@ -176,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView kaloriKentta = findViewById(R.id.kaloriView);
         kaloriKentta.setText(Integer.toString(tanaan.getKalorit()));
+        updateSexButtons();
     }
 
     /**
