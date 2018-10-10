@@ -52,7 +52,7 @@
         android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="#0066ff"
         android:onClick="onShowMonthButton"
         android:text="@string/historia"
@@ -77,18 +77,21 @@
     <TextView
         android:id="@+id/tanaansyoty"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="34dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/tanaansyoty"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/painoInput" />
 
     <TextView
         android:id="@+id/kaloriView"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="34dp"
         android:layout_marginStart="28dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tanaansyoty"
         app:layout_constraintTop_toTopOf="@+id/tanaansyoty" />
 

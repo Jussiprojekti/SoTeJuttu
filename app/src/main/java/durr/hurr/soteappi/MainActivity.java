@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         String teksti2 = painoKentta.getText().toString();
 
         if(!TextUtils.isEmpty(teksti2)) {
-            int lisapaino = Integer.valueOf(teksti2); 
+            int lisapaino = Integer.valueOf(teksti2);
             tanaan.setPainoa(lisapaino);
             Log.d(log, "lisatty paino");
             paivitys();
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
     public void paivitys() {
         setContentView(R.layout.activity_main);
         TextView kaloriKentta = findViewById(R.id.kaloriView);
-        kaloriKentta.setText(Integer.toString(tanaan.getKalorit()));
+        kaloriKentta.setText(Integer.toString(tanaan.getKalorit())+" kcal");
         updateSexButtons();
     }
 
@@ -245,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onPause(){
-        updateSexButtons();
+        //updateSexButtons();
         super.onPause();
         Log.d(log,"Paused");
         saveData();
