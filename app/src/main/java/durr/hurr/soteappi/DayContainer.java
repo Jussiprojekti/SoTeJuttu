@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import static durr.hurr.soteappi.MainActivity.log;
 import static durr.hurr.soteappi.MainActivity.osoite;
 
+/**
+ * @author Tommi
+ */
 public class DayContainer {
 
     private static final DayContainer dayContainer = new DayContainer();
@@ -133,11 +136,11 @@ public class DayContainer {
         //arvioKulutuksesta=keskiLaihtuminen+(Math.round(9000 * 100) / 100);
         //if (sukupuoli.equals("Male")){
         if (keskiLaihtuminen<=0) {
-            arvioKulutuksesta=keskiSyonti+((-1)*Math.round(keskiLaihtuminen* 9000 * 100) / 100);
+            arvioKulutuksesta=Math.round(keskiSyonti+((-1)*keskiLaihtuminen* 9000) * 100) / 100;
             //arvioKulutuksesta = -((Math.round(keskiLaihtuminen * 9000 * 100) / 100)-keskiSyonti) ;
         } else {
-               arvioKulutuksesta=(Math.round(keskiLaihtuminen* 9000 * 100) / 100);
-            return "Olet lyittänyt päiväkulutukseksi " + Double.toString(arvioKulutuksesta) + " kcal/pv";
+               arvioKulutuksesta=Math.round(keskiSyonti-keskiLaihtuminen* 9000 * 100) / 100;
+            //return "Olet ylittänyt päiväkulutukseksi " + Double.toString(arvioKulutuksesta) + " kcal/pv";
             //arvioKulutuksesta = -((Math.round(keskiLaihtuminen * 9000 * 100) / 100)-keskiSyonti) ;
 
         }
