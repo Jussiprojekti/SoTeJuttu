@@ -8,13 +8,13 @@
 
     <ListView
         android:id="@+id/listViewMonth"
-        android:layout_width="346dp"
-        android:layout_height="378dp"
+        android:layout_width="347dp"
+        android:layout_height="399dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="15dp"
-        android:scrollbars="none"
         android:listSelector="#33cc33"
+        android:scrollbars="none|vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

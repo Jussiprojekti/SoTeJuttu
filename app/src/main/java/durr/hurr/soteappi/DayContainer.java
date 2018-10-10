@@ -60,8 +60,8 @@ public class DayContainer {
             listDays.add(new Day("2018-10-03", 2500, 74));
             listDays.add(new Day("2018-10-04", 2700, 75));
             listDays.add(new Day("2018-10-05", 2600, 75));
-            listDays.add(new Day("2018-10-05", 2900, 75));
-            listDays.add(new Day("2018-10-05", 2600, 75));
+            listDays.add(new Day("2018-10-06", 2900, 75));
+            listDays.add(new Day("2018-10-07", 2600, 75));
 
 /*
         listDays = new ArrayList<>();
@@ -168,7 +168,7 @@ public class DayContainer {
         double keskiSyonti=kcal/((listDays.size()*1.00));
         double keskiLaihtuminen=painonMuutos/(listDays.size());
 
-        String sukupuoli=MainActivity.sex;
+        //String sukupuoli=MainActivity.sex;
         double arvioKulutuksesta;
 
         //arvioKulutuksesta=keskiLaihtuminen-(Math.round(9000 * 100) / 100);

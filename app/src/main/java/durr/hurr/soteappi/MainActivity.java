@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.io.BufferedOutputStream;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences myPref;
     public static final String SHARED_PREF="myPref";
     int paino;
-    public static String sex;
+    public String sex;
     public Day tanaan;
     ArrayList<Day> listaHolder;
     FileOutputStream ulosVirta;
@@ -160,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
             DayContainer.getInstance().getDaysList().add(tanaan);
             Log.d(log, "uusi paiva");
         }
+        updateSexButtons(); //Update radiobuttons
         TextView paivamaara = findViewById(R.id.testi);
         paivamaara.setText(LocalDate.now(aikaVyo).toString());
         paivitys();
@@ -180,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void saveData() {
         SharedPreferences.Editor editor = myPref.edit();
-        editor.putString(KEY_SEX, this.sex);
+        editor.putString(KEY_SEX, sex);
         editor.putInt("paino", tanaan.getPaino());
         sailio = new File(getFilesDir().getPath() + "lista.ser");
         try{
@@ -202,6 +204,24 @@ public class MainActivity extends AppCompatActivity {
         }
         editor.commit();
     }
+
+    /**
+     * Päivitetään radiobuttoneiden asento oikeaksi
+     */
+    public void updateSexButtons() {
+        sex=myPref.getString(KEY_SEX, "female");
+
+        RadioGroup sexButton = (RadioGroup) findViewById(R.id.sexGroup);
+        sexButton.check(R.id.radioButtonNainen);
+
+        if (sex.equals("male")) {
+            sexButton.check(R.id.radioButtonMies);
+            //sexButton.check(R.id.radioButtonNainen);
+        } else {
+            sexButton.check(R.id.radioButtonNainen);
+        }
+    }
+
 
     /**
      * Overridattu, päivätarkistus ja päivitys kutsu lisätty
