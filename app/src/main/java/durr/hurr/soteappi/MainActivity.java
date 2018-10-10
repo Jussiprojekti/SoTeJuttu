@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public String sex;
     public Day tanaan;
     ArrayList<Day> listaHolder;
+    FileOutputStream ulosVirta;
     public static final String KEY_SEX="sexKey";
     public static final String log = "SoTeAppi";
     File sailio;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         myPref = getSharedPreferences(SHARED_PREF, Activity.MODE_PRIVATE);
         sex=myPref.getString(KEY_SEX, "male");
         paino = myPref.getInt("paino", 0);
+
     }
 
     /**

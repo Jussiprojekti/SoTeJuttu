@@ -21,7 +21,7 @@ public class ShowMonth extends AppCompatActivity {
         setContentView(R.layout.activity_show_month);
 
         //Find ListView element
-        ListView lv = findViewById(R.id.listViewMonth);
+        ListView listaNakyma = findViewById(R.id.listViewMonth);
 
         //Create adapter that handle arraylist to ListView
         ArrayAdapter<Day> adapter = new ArrayAdapter<>(
@@ -31,6 +31,6 @@ public class ShowMonth extends AppCompatActivity {
         );
 
         //Set adapter to right element
-        lv.setAdapter(adapter);
+        listaNakyma.setAdapter(adapter);
     }
 }

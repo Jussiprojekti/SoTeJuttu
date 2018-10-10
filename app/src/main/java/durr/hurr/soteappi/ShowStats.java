@@ -14,7 +14,7 @@ import android.widget.TextView;
  */
 public class ShowStats extends AppCompatActivity {
     /**
-     * Etsii textviet ja asettaa niihin tekstit DayContainerin metodeilla
+     * Etsii textviewit ja asettaa niihin tekstit DayContainerin metodeilla
      * @param savedInstanceState oletus
      */
     SharedPreferences myPref;
@@ -28,7 +28,6 @@ public class ShowStats extends AppCompatActivity {
         myPref = getSharedPreferences(SHARED_PREF, Activity.MODE_PRIVATE);
         String sukupuoli=myPref.getString(KEY_SEX, "male");
 
-
         TextView keskiSyonti = findViewById(R.id.textAvarangeKcal);
         keskiSyonti.setText(DayContainer.getInstance().getAvarangeKcal());
 
@@ -38,6 +37,7 @@ public class ShowStats extends AppCompatActivity {
         TextView keskikulutus = findViewById(R.id.textKulutus);
         keskikulutus.setText(DayContainer.getInstance().getKeskiKulutus());
 
+        // Testataan kumpi sukupuoli on valittu ja annetaan tietoa sen mukaan
         if (sukupuoli.equals("male")) {
             TextView sexKulutus = findViewById(R.id.textSexKulutus);
             sexKulutus.setText("Miesten normaali kalorikulutus on 2200 kcal/pv");
