@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
     public void onShowStatsButton(View view) {
         //Go to ShowStats activity
         Intent nextActivity = new Intent(MainActivity.this, ShowStats.class);
-        //nextActivity.putExtra("ListOfDays", DayContainer.getInstance().getDaysList());
         startActivity(nextActivity);
     }
 
@@ -136,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     sex="female";
                     break;
         }
+        saveData();
     }
 
     /**
@@ -207,21 +207,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Päivitetään radiobuttoneiden asento oikeaksi
+     * Päivitetään radiobuttoneiden valinta oikeaksi
      */
     public void updateSexButtons() {
-        sex=myPref.getString(KEY_SEX, "female");
+        sex=myPref.getString(KEY_SEX, "male");
 
-        RadioGroup sexButton = findViewById(R.id.sexGroup);
+        RadioGroup sexButton = (RadioGroup) findViewById(R.id.sexGroup);
         sexButton.clearCheck();
-        RadioButton suk = findViewById(R.id.radioButtonNainen);
-        suk.setChecked(true);
-        /*if (sex.equals("male")) {
+        if (sex.equals("male")) {
             sexButton.check(R.id.radioButtonMies);
+            //sexButton.check(sexButton.getChildAt(1).getId());
             //sexButton.check(R.id.radioButtonNainen);
         } else {
             sexButton.check(R.id.radioButtonNainen);
-        }*/
+        }
     }
 
 
@@ -233,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         paivaTarkistus();
         paivitys();
+        updateSexButtons();
     }
 
     /**
@@ -240,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onPause(){
+        updateSexButtons();
         super.onPause();
         Log.d(log,"Paused");
         saveData();
@@ -250,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
      * @return String jossa on tallennettu sukupuoli
      */
     public String getSex(){
-        return sex;
+        return this.sex;
     }
 
 }
